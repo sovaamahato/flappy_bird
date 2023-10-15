@@ -14,6 +14,8 @@ class Bird{
         };
         this.accleration=0.2;
 
+        this.isAlive=true;
+
         this.birdImg=new  Image();
         this.birdImg.src="./PNG/frame-1.png";
 
@@ -36,6 +38,7 @@ class Bird{
     borderCollision(){
         if(this.position.y+this.size.height>=canvas.height){
             this.position.y= canvas.height-this.size.height;
+            this.isAlive=false;
         }
     }
  
