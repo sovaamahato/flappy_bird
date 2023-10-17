@@ -9,7 +9,7 @@ class Pipe{
             height:300,
         }
         this.velocity={
-            x:-1,
+            x:-1.5,
             y:0,
         }
         this.bg=new Image();
@@ -45,13 +45,44 @@ class Pipe{
 
     }
 
+    collision(){
+
+
+
+        //upper pipe collision 
+        if (this.position.x + this.size.width >=
+            bird.position.x - bird.size.width / 2 &&
+          this.position.x <=
+            bird.position.x - bird.size.width / 2 + bird.size.width &&
+          this.position.y + this.size.height >= bird.position.y &&
+          this.position.y <= bird.position.y + bird.size.height){
+            console.log("up collide");
+            bird.isAlive=false;
+          }
+        if(this.position.x + this.size.width >=
+            bird.position.x - bird.size.width / 2 &&
+          this.position.x <=
+            bird.position.x - bird.size.width / 2 + bird.size.width &&
+          this.position.y + this.size.height + 150 + this.size.height >=
+            bird.position.y &&
+          this.position.y + this.size.height + 150 <=
+            bird.position.y + bird.size.height){
+
+                console.log("down collide");
+            bird.isAlive=false;
+            
+        }
+    }
+
     update(){
         this.draw();
+        
         
         this.drawDownPipe();
         if(bird.isAlive)
         {
             this.move();
+            this.collision();
         }
         
     }

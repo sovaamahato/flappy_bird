@@ -48,8 +48,12 @@ class Bird{
 
     update(){
         this.draw();
-        this.move();
+        if(this.isAlive){
+            this.move();
         this.borderCollision();
+
+        }
+        
     }
 
 
