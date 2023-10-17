@@ -1,8 +1,8 @@
 class Pipe{
     constructor(x,y){
         this.position={
-            x:canvas.width,
-            y:Math.random() * (0 - -250) + -250,
+            x:x,
+            y:y,
         }
         this.size={
             width:30,

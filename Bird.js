@@ -43,7 +43,7 @@ class Bird{
     }
  
     jump(){
-        this.velocity.y=-2;
+        this.velocity.y=-2.5;
     }
 
     update(){
