@@ -2,7 +2,7 @@ class Bird{
     constructor(){
         this.position={
             x:canvas.width/2,
-            y:0
+            y:4
         };
         this.size={
             width:50,
@@ -40,10 +40,14 @@ class Bird{
             this.position.y= canvas.height-this.size.height;
             this.isAlive=false;
         }
+        if(this.position.y<=0){
+            this.position.y= 0;
+            this.isAlive=false;
+        }
     }
  
     jump(){
-        this.velocity.y=-2.5;
+        this.velocity.y=-3.5;
     }
 
     update(){
