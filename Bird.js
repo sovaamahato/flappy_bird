@@ -39,10 +39,12 @@ class Bird{
         if(this.position.y+this.size.height>=canvas.height){
             this.position.y= canvas.height-this.size.height;
             this.isAlive=false;
+            birdCollisionSound();
         }
         if(this.position.y<=0){
             this.position.y= 0;
             this.isAlive=false;
+            birdCollisionSound();
         }
     }
  

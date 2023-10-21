@@ -57,6 +57,7 @@ class Pipe{
           this.position.y + this.size.height >= bird.position.y &&
           this.position.y <= bird.position.y + bird.size.height){
             console.log("up collide");
+            birdCollisionSound();
             bird.isAlive=false;
           }
         if(this.position.x + this.size.width >=
@@ -70,6 +71,7 @@ class Pipe{
 
                 console.log("down collide");
             bird.isAlive=false;
+            birdCollisionSound();
             
         }
     }

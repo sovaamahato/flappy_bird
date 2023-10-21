@@ -9,7 +9,32 @@ const pipe2=new Pipe(canvas.width+150,Math.random() * (0 - -250) + -250,);
 
 let gameScore =0;
 
+
+// load the music
+// Audio()
+const backgroundMusic = new Audio();
+backgroundMusic.src = "./sound/Samurai.mp3";
+function play(){
+    backgroundMusic.play();
+    backgroundMusic.loop=true;
+    backgroundMusic.volume = 0.4;
+    
+}
+
+const collideSound=new Audio();
+collideSound.src="./sound/die.mp3";
+function birdCollisionSound(){
+    collideSound.play();
+   
+    collideSound.volume = 0.5;
+    
+}
+
+
+
+
 function loop(){
+    play();
     c.clearRect(0,0,canvas.clientWidth,canvas.height);
     bgPic1.update();
     bgPic2.update();
@@ -35,6 +60,9 @@ function loop(){
         c.fillText("Game over ", 90,250);
         c.fillText("Your Score: "+gameScore, 80,280);
 
+        backgroundMusic.pause();
+        backgroundMusic.loop=flase;
+
     }
     requestAnimationFrame(loop);
 
@@ -52,4 +80,7 @@ document.addEventListener("keydown",()=>{
 
     bird.jump();
 });
+
 loop();
+
+ 
